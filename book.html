@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Book</title>
+    <script type="text/javascript">
+
+    function chkEmpty(){
+    	if (document.frmReg.username.value == "") {alert("Please fill the User Name");}
+      else if (document.frmReg.mobile.value == ""){alert("Please fill the Mobile");}
+      else {
+    	window.location="confirm.html";
+    		}
+    	}
+
+
+
+  </script>
+  </head>
+  <body>
+    <center>
+      <form name="frmReg" action="confirm.html" method="post">
+        User name: <input type="text" name="username">
+        Mobile: <input type="text" name="mobile">
+        <input type="button" name="bookbtn" value="Book" onclick="chkEmpty()">
+      </form>
+    </center>
+  </body>
+</html>

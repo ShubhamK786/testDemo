@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Login</title>
+    <script type="text/javascript">
+function validateForm(){
+	var uname=myform.userName.value;
+	var upwd=myform.userPwd.value;
+
+	var flag=false;
+	if(uname==""||uname==null){
+		document.getElementById('userErrMsg').innerHTML=" * Please enter userName.";
+
+	}
+	else if(upwd=="" || upwd==null)
+		{
+		flag=false;
+		document.getElementById('userErrMsg').innerHTML="";
+		document.getElementById('userErrMsg').innerHTML=" * Please enter password.";
+		}
+	else if(uname=="admin" && upwd=="root"){
+		flag=true;
+		document.getElementById('userErrMsg').innerHTML="";
+		document.getElementById('userErrMsg').innerHTML="";
+
+		}
+	else{
+		flag=false;
+		document.getElementById('userErrMsg').innerHTML="";
+		document.getElementById('userErrMsg').innerHTML="";
+		alert('Invalid login! Please try again!');
+	}
+
+	if(flag)
+		window.location.href = "book.html";
+	return flag;
+}
+</script>
+  </head>
+  <body>
+    <center>
+      <form id="myform">
+        User name: <input type="text" name="userName">
+        Password: <input type="password" name="userPwd">
+        <input type="button" name="loginbtn" value="Login"  onclick="validateForm()">
+        <br>
+        <p id="userErrMsg"></p>
+      </form>
+    </center>
+  </body>
+</html>
